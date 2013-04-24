@@ -26,4 +26,23 @@ bool drawcirc(unsigned char *buffer,
 	      int blue,
 	      double alpha);
 
+bool drawline(unsigned char *buffer,
+	      int width,
+	      int height,
+	      double xstart,
+	      double ystart,
+	      double xend,
+	      double yend,
+	      int red,
+	      int green,
+	      int blue,
+	      double alpha);
+
+unsigned char* convolve(unsigned char *image, 
+			float *filter, 
+			int w, 
+			int h, 
+			int fw, 
+			int fh);
+
 #endif

@@ -38,6 +38,12 @@ int main(int argc, char* argv[])
 	}
     }
 
+  /*int midwidth = width/2;
+  int midheight = height/2;
+  buffer[3*(midwidth + midheight*width) + 0] = 255;
+  buffer[3*(midwidth + midheight*width) + 1] = 255;
+  buffer[3*(midwidth + midheight*width) + 2] = 255;*/
+  
   if(write_ppm(outFilename,width,height,buffer))
     {
       printf("Wrote %s\n", outFilename);

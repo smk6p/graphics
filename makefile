@@ -19,8 +19,8 @@ noise: noise.o ppm.o util.o
 drawcirc: drawcirc.o ppm.o util.o draw2D.o
 	gcc -o drawcirc drawcirc.o ppm.o util.o draw2D.o
 
-drawline: drawline.o ppm.o util.o
-	gcc -o drawline drawline.o ppm.o util.o
+drawline: drawline.o ppm.o util.o draw2D.o
+	gcc -o drawline drawline.o ppm.o util.o draw2D.o
 
 drawrect: drawrect.o ppm.o util.o draw2D.o
 	gcc -o drawrect drawrect.o ppm.o util.o draw2D.o
@@ -34,5 +34,22 @@ drawcirctest: drawcirctest.o ppm.o util.o draw2D.o
 drawrecttest: drawrecttest.o ppm.o util.o draw2D.o
 	gcc -o drawrecttest drawrecttest.o ppm.o util.o draw2D.o
 
+crop: crop.o ppm.o util.o
+	gcc -o crop crop.o ppm.o util.o
+
+convolve: convolve.o ppm.o util.o draw2D.o
+	gcc -o convolve convolve.o ppm.o util.o draw2D.o
+
+blur: blur.o ppm.o util.o draw2D.o
+	gcc -o blur blur.o ppm.o util.o draw2D.o
+
+downsize: downsize.o ppm.o util.o
+	gcc -o downsize downsize.o ppm.o util.o
+
+unsharpmask: unsharpmask.o ppm.o util.o draw2D.o
+	gcc -o unsharpmask unsharpmask.o ppm.o util.o draw2D.o
+
+edge: edge.o ppm.o util.o draw2D.o
+	gcc -o edge edge.o ppm.o util.o draw2D.o
 clean:
 	rm -f *.o

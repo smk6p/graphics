@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void usage(const char *progname)
+{
+  printf("Usage: %s width height image.ppm\n", progname);
+  exit(0);
+}
+
 int main(int argc, char* argv[])
 {
   // print out argument data
@@ -11,14 +17,14 @@ int main(int argc, char* argv[])
     }
   // check if there are enough args
 
-  if (argc < 3)
+  if (argc != 4)
     {
-      fprintf(stderr,"Please enter width and height\n");
-      return -1;
+      usage(argv[0]);
     }
   // create image
   int width = atoi(argv[1]);
   int height = atoi(argv[2]);
+  char* image = argv[3];
 
   // allocate memory for an 8-bit RGB image of dimensions width x height
   unsigned char *buffer = (unsigned char *)malloc(sizeof(unsigned char)*width*height*3);
@@ -34,7 +40,7 @@ int main(int argc, char* argv[])
 	}
     }
 
-  FILE* imageFile = fopen("image.ppm","w");
+  FILE* imageFile = fopen(image,"w");
 
   if (imageFile == NULL)
     {

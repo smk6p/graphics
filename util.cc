@@ -118,6 +118,19 @@ int clamp(int input)
   return input;
 }
 
+int clampval(int input, int min, int max)
+{
+  if(input < min)
+    {
+      return min;
+    }
+  if(input > max)
+    {
+      return max;
+    }
+  return input;
+}
+
 //clamps input to a range of 0 to 1
 double clampa(double alpha)
 {
@@ -130,4 +143,13 @@ double clampa(double alpha)
       return 1.0;
     }
   return alpha;
+}
+
+bool isOdd(int x)
+{
+  if ((x + 1)/2 > x/2)
+    {
+      return true;
+    }
+  return false;
 }
